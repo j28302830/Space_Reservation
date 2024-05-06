@@ -8,6 +8,19 @@ body {
   padding: 0.5rem;
 }
 
+.full-height-div {
+    height: 98vh;
+}
+
+.login_content{
+	padding: 2em;
+	max-width: 600px;
+	margin: auto;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.67);
+  box-shadow: 0px 0px 3px #333;
+}
+
 .form-wrap h1,
 .form-wrap .form-label {
   font-weight: 600;

@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User login system</title>
+  <title>Space Reservation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="shortcut icon" href="./img/favicon-16x16.png" type="image/x-icon">
@@ -105,14 +105,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
   <div class="container">
     <div class="row min-vh-100 justify-content-center align-items-center">
-      <div class="col-lg-5">
+      <div class="col-lg-5 full-height-div">
         <?php
         if (!empty($login_err)) {
           echo "<div class='alert alert-danger'>" . $login_err . "</div>";
         }
         ?>
-        <div class="form-wrap border rounded p-4">
-          <h1>Log In</h1>
+        <div class="form-wrap border rounded p-3 full-height-div login_content">
+          <h1>自習室座位預約系統</h1>
           <p>Please login to continue</p>
           <!-- form starts here -->
           <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate>
