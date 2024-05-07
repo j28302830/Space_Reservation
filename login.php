@@ -136,6 +136,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="mb-0">Don't have an account ? <a href="./register.php">Sign Up</a></p>
           </form>
           <!-- form ends here -->
+
+          <div>
+          <h2>可用預約空間現況</h2>
+    <button onclick="showArea('A')">區域 A</button>
+    <button onclick="showArea('B')">區域  B</button>
+   
+     <div id="seats"></div>
+     <script>
+        function showArea(area) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("seats").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "get_seats.php?area=" + area, true);
+            xmlhttp.send();
+        }
+    </script>
+      </div>
+      
         </div>
       </div>
     </div>
