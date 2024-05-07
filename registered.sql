@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 07, 2024 at 03:39 PM
+-- Generation Time: May 07, 2024 at 04:27 PM
 -- Server version: 8.0.36-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.17
 
@@ -117,7 +117,7 @@ CREATE TABLE `users` (
   `username` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `is_admin` tinyint(1) NOT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT '0',
   `reg_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -126,7 +126,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `reg_date`) VALUES
-(10, 'M123140002', 'aa28302830@gmail.com', '$2y$10$/8b55CHCPSJsQlQ08xkjSu/yhfzA4rqP7qL3JQMLkO4YnvpbHym6i', 0, '2024-05-06 19:36:50');
+(10, 'M123140002', 'aa28302830@gmail.com', '$2y$10$/8b55CHCPSJsQlQ08xkjSu/yhfzA4rqP7qL3JQMLkO4YnvpbHym6i', 0, '2024-05-06 19:36:50'),
+(12, 'root', 'root@gmail.com', '$2y$10$NUmmtvhkKZC4Qa9iKOGWZOdEpF7fsTOY6zoU0WeBYNffyoP5o1Xxq', 0, '2024-05-07 16:00:54');
 
 --
 -- Indexes for dumped tables
@@ -178,7 +179,7 @@ ALTER TABLE `seats`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
