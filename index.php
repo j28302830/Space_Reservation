@@ -21,25 +21,29 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
   <link rel="stylesheet" href="./css/main.css">
   <link rel="shortcut icon" href="./img/favicon-16x16.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/process.js"></script>
 </head>
 
 <body>
   <div>
     <header>
       <ul class="nav nav-justified">
-      <li class="nav-item">
-        <a class="nav-link" href="#">查詢</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">新增預約</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="./logout.php" >登出</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./index.php">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="toggleTable()">查詢</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">新增預約</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./logout.php">登出</a>
+        </li>
       </ul>
-  </header>
-   </div>
-  <div class="container">
+    </header>
+  </div>
+  <div id="show" class="container">
     <div class="alert alert-success my-5">
       Welcome ! You are now signed in to your account.
     </div>
@@ -48,8 +52,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
       <div class="col-lg-5 text-center">
         <img src="./img/blank-avatar.jpg" class="img-fluid rounded" alt="User avatar" width="180">
         <h4 class="my-4">Hello, <?= htmlspecialchars($_SESSION["username"]); ?></h4>
-        
+
       </div>
+    </div>
+  </div>
+  <!-- Reservation info -->
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <h2 class="my-4">預約資訊</h2>
+      <div id="reservationTable"></div>
     </div>
   </div>
 </body>

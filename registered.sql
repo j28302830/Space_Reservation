@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 08, 2024 at 01:29 AM
+-- Generation Time: May 08, 2024 at 05:29 PM
 -- Server version: 8.0.36-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.17
 
@@ -36,6 +36,36 @@ CREATE TABLE `blockdate` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `period`
+--
+
+CREATE TABLE `period` (
+  `pid` int NOT NULL,
+  `time` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `period`
+--
+
+INSERT INTO `period` (`pid`, `time`) VALUES
+(1, '9:00~10:00'),
+(2, '10:00~11:00'),
+(3, '11:00~12:00'),
+(4, '12:00~13:00'),
+(5, '13:00~14:00'),
+(6, '14:00~15:00'),
+(7, '15:00~16:00'),
+(8, '16:00~17:00'),
+(9, '17:00~18:00'),
+(10, '18:00~19:00'),
+(11, '19:00~20:00'),
+(12, '20:00~21:00'),
+(13, '21:00~22:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reservation`
 --
 
@@ -43,9 +73,18 @@ CREATE TABLE `reservation` (
   `rid` int NOT NULL,
   `id` int NOT NULL,
   `sid` int NOT NULL,
-  `period` char(1) NOT NULL,
-  `rdate` date NOT NULL
+  `pid` int NOT NULL,
+  `rdate` date NOT NULL,
+  `rdatetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`rid`, `id`, `sid`, `pid`, `rdate`, `rdatetime`) VALUES
+(1, 10, 18, 1, '2024-05-08', '2024-05-08 05:13:31'),
+(2, 10, 15, 1, '2024-05-08', '2024-05-08 17:23:39');
 
 -- --------------------------------------------------------
 
@@ -140,12 +179,19 @@ ALTER TABLE `blockdate`
   ADD PRIMARY KEY (`bid`);
 
 --
+-- Indexes for table `period`
+--
+ALTER TABLE `period`
+  ADD PRIMARY KEY (`pid`);
+
+--
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
   ADD PRIMARY KEY (`rid`),
   ADD KEY `id` (`id`),
-  ADD KEY `sid` (`sid`);
+  ADD KEY `sid` (`sid`),
+  ADD KEY `pid` (`pid`) USING BTREE;
 
 --
 -- Indexes for table `seats`
@@ -164,10 +210,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `period`
+--
+ALTER TABLE `period`
+  MODIFY `pid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `rid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `rid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `seats`

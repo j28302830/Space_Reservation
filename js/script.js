@@ -9,3 +9,4 @@ togglePasswordEl.addEventListener("click", function () {
     userPasswordEl.setAttribute("type", "password");
   }
 });
+

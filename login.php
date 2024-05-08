@@ -100,6 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="./css/main.css">
   <link rel="shortcut icon" href="./img/favicon-16x16.png" type="image/x-icon">
   <script defer src="./js/script.js"></script>
+  <script src="./js/process.js"></script>
 </head>
 
 <body>
@@ -136,27 +137,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="mb-0">Don't have an account ? <a href="./register.php">Sign Up</a></p>
           </form>
           <!-- form ends here -->
-
+          <!-- seat status  start here -->
+          <br>
           <div>
-          <h2>可用預約空間現況</h2>
-    <button onclick="showArea('A')">區域 A</button>
-    <button onclick="showArea('B')">區域  B</button>
-   
-     <div id="seats"></div>
-     <script>
-        function showArea(area) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("seats").innerHTML = this.responseText;
-                }
-            };
-            xmlhttp.open("GET", "get_seats.php?area=" + area, true);
-            xmlhttp.send();
-        }
-    </script>
-      </div>
-      
+            <h3>自習室預約現況</h3>
+            <label for="area">選擇區域:</label>
+            <select id="area">
+              <option value="A">區域 A</option>
+              <option value="B">區域 B</option>
+            </select>
+
+            <label for="period">選擇時段:</label>
+            <select id="period">
+              <?php
+              $startTime = strtotime("9:00");
+              $endTime = strtotime("22:00");
+              $period = 1;
+              while ($startTime < $endTime) {
+                $startTimeFormatted = date("H:i", $startTime);
+                $nextHour = strtotime("+1 hour", $startTime);
+                $nextHourFormatted = date("H:i", $nextHour);
+                echo "<option value='$period'>$startTimeFormatted~$nextHourFormatted</option>";
+                $startTime = $nextHour;
+                $period++;
+              }
+              ?>
+            </select>
+
+            <button onclick="showPeriod()">確認</button>
+
+            <div id="seats"></div>
+          </div>
+
+          <!-- seat status end here -->
+
+
         </div>
       </div>
     </div>
