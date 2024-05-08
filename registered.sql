@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 08, 2024 at 05:29 PM
+-- Generation Time: May 09, 2024 at 01:38 AM
 -- Server version: 8.0.36-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.17
 
@@ -32,6 +32,13 @@ CREATE TABLE `blockdate` (
   `date` date NOT NULL,
   `reason` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `blockdate`
+--
+
+INSERT INTO `blockdate` (`bid`, `date`, `reason`) VALUES
+(1, '2024-05-11', 'no reason');
 
 -- --------------------------------------------------------
 
@@ -208,6 +215,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `blockdate`
+--
+ALTER TABLE `blockdate`
+  MODIFY `bid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `period`

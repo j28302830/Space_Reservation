@@ -140,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <!-- seat status  start here -->
           <br>
           <div>
-            <h3>自習室預約現況</h3>
+            <h3>當日預約現況</h3>
             <label for="area">選擇區域:</label>
             <select id="area">
               <option value="A">區域 A</option>
