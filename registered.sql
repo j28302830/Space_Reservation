@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 09, 2024 at 04:34 PM
+-- Generation Time: May 09, 2024 at 09:02 PM
 -- Server version: 8.0.36-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.17
 
@@ -90,7 +90,11 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`rid`, `id`, `sid`, `pid`, `rdate`, `rdatetime`) VALUES
-(5, 10, 10, 1, '2024-05-08', '2024-05-09 15:41:55');
+(5, 10, 10, 1, '2024-05-08', '2024-05-09 15:41:55'),
+(6, 12, 10, 1, '2024-06-06', '2024-05-09 20:35:46'),
+(7, 12, 20, 1, '2024-05-10', '2024-05-09 20:46:06'),
+(8, 12, 14, 1, '2024-05-11', '2024-05-09 20:46:38'),
+(9, 12, 20, 1, '2024-05-06', '2024-05-09 20:48:08');
 
 -- --------------------------------------------------------
 
@@ -231,7 +235,7 @@ ALTER TABLE `period`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `rid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `rid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `seats`
