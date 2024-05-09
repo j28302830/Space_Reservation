@@ -15,6 +15,7 @@ function generateReservationTable($reservations)
         echo "<th scope='col'>日期</th>";
         echo "<th scope='col'>時段</th>";
         echo "<th scope='col'>預約日期時間</th>";
+        echo "<th scope='col'>修改預約</th>";
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
@@ -27,6 +28,7 @@ function generateReservationTable($reservations)
             echo "<td>" . $reservation['日期'] . "</td>";
             echo "<td>" . $reservation['時段'] . "</td>";
             echo "<td>" . $reservation['預約日期時間'] . "</td>";
+            echo "<td> <button id='cancelreservationrid' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#confirmmodal' value ='" . $reservation['預約單編號'] . "'> 取消預約 </button></td>";
             echo "</tr>";
         }
         echo "</tbody>";

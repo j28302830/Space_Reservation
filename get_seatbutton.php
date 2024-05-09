@@ -44,7 +44,7 @@ foreach ($seats as $sid => $num) {
     if (in_array($sid, $reservedSeats)) {
         echo "<td style='background-color: red'>$num</td>";
     } else {
-        echo "<td style='background-color: green'>$num</td>";
+        echo "<td><button style='background-color: green' onclick='selectButton($num)'>$num</button></td>";
     }
 
     $count++;

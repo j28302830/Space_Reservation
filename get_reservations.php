@@ -14,7 +14,8 @@ function getReservations($username)
                 CASE WHEN s.socket = 1 THEN '有' ELSE '無' END AS 插座,
                 r.rdate AS 日期,
                 p.time AS 時段,
-                r.rdatetime AS 預約日期時間
+                r.rdatetime AS 預約日期時間,
+                r.rid AS 預約單編號
             FROM 
                 reservation r
             JOIN 

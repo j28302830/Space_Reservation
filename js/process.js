@@ -50,6 +50,45 @@ function toggleTable() {
             document.getElementById("seats").innerHTML = this.responseText;
         }
     };
-    xmlhttp.open("GET", "getseatbutton.php?area=" + area + "&period=" + period + "&date=" + date, true);
+    xmlhttp.open("GET", "get_seatbutton.php?area=" + area + "&period=" + period + "&date=" + date, true);
     xmlhttp.send();
+}
+
+var nums=null;
+
+function selectButton(num){
+    nums=num;
+}
+
+function getReservationInfo(){
+    var area = document.getElementById("area").value;
+    var period = document.getElementById("period").value;
+    var date = document.getElementById('date').value;
+    sendReservation(area, period, nums, date);
+}
+
+function sendReservation(area, period, num, date){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("seats").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "send_reservation.php?area=" + area + "&period=" + period + "&date=" + date + "&num=" + num, true);
+    xmlhttp.send();
+}
+
+function cancel_reservation(){
+    var rid = document.getElementById("cancelreservationrid").value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("seats").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "cancel_reservation.php?rid=" + rid, true);
+    xmlhttp.send();
+
+    removediv();
+    toggleTable();
 }
