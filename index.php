@@ -32,7 +32,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
           <a class="nav-link" href="./index.php">首頁</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" onclick="toggleTable();removediv()">查詢</a>
+          <a class="nav-link" onclick="toggleTable()">查詢</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">新增預約</a>
@@ -106,12 +106,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="getReservationInfo()">Conform</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="getReservationInfo()">Confirm</button>
         </div>
 
       </div>
     </div>
   </div>
+
   <!-- The Modal -->
   <div class="modal" id="confirmmodal">
     <div class="modal-dialog">
@@ -132,6 +133,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
       </div>
     </div>
   </div>
+  
 </body>
 
 </html>

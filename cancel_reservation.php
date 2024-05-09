@@ -20,7 +20,10 @@ if ($result->num_rows > 0) {
     $sql = "DELETE FROM reservation WHERE id = '$userId' AND rid = '$rid'";
 
     if ($link->query($sql) === TRUE) {
-        echo "成功刪除預約訂單";
+        echo "<div id = 'infoPopup' class='popup'>
+                <p>成功刪除預約訂單。</p>
+                <button  onclick='removeInfoPopup()' >確認</button>
+            </div>";
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;
     }

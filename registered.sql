@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 09, 2024 at 09:02 PM
+-- Generation Time: May 10, 2024 at 05:47 AM
 -- Server version: 8.0.36-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.17
 
@@ -91,10 +91,7 @@ CREATE TABLE `reservation` (
 
 INSERT INTO `reservation` (`rid`, `id`, `sid`, `pid`, `rdate`, `rdatetime`) VALUES
 (5, 10, 10, 1, '2024-05-08', '2024-05-09 15:41:55'),
-(6, 12, 10, 1, '2024-06-06', '2024-05-09 20:35:46'),
-(7, 12, 20, 1, '2024-05-10', '2024-05-09 20:46:06'),
-(8, 12, 14, 1, '2024-05-11', '2024-05-09 20:46:38'),
-(9, 12, 20, 1, '2024-05-06', '2024-05-09 20:48:08');
+(30, 12, 10, 1, '2024-05-11', '2024-05-10 05:28:22');
 
 -- --------------------------------------------------------
 
@@ -176,7 +173,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `reg_date`) VALUES
 (10, 'M123140002', 'aa28302830@gmail.com', '$2y$10$/8b55CHCPSJsQlQ08xkjSu/yhfzA4rqP7qL3JQMLkO4YnvpbHym6i', 0, '2024-05-06 19:36:50'),
-(12, 'root', 'root@gmail.com', '$2y$10$NUmmtvhkKZC4Qa9iKOGWZOdEpF7fsTOY6zoU0WeBYNffyoP5o1Xxq', 0, '2024-05-07 16:00:54');
+(12, 'root', 'root@gmail.com', '$2y$10$NUmmtvhkKZC4Qa9iKOGWZOdEpF7fsTOY6zoU0WeBYNffyoP5o1Xxq', 1, '2024-05-07 16:00:54');
 
 --
 -- Indexes for dumped tables
@@ -235,7 +232,7 @@ ALTER TABLE `period`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `rid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `rid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `seats`
