@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
     if ($link->query($sql) === TRUE) {
         echo "<div id = 'infoPopup' class='popup'>
                 <p>成功開放預約日期。</p>
-                <button  onclick='removeInfoPopup()' >確認</button>
+                <button  onclick='openBlockDatePopup()' >確認</button>
             </div>";
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;

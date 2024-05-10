@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 10, 2024 at 04:20 PM
+-- Generation Time: May 10, 2024 at 04:52 PM
 -- Server version: 8.0.36-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.17
 
@@ -38,8 +38,9 @@ CREATE TABLE `blockdate` (
 --
 
 INSERT INTO `blockdate` (`bid`, `date`, `reason`) VALUES
-(4, '2024-05-11', ''),
-(5, '2024-05-12', '');
+(8, '2024-05-15', ''),
+(9, '2024-05-15', ''),
+(10, '2024-05-18', '');
 
 -- --------------------------------------------------------
 
@@ -213,7 +214,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blockdate`
 --
 ALTER TABLE `blockdate`
-  MODIFY `bid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `bid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `period`

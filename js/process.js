@@ -104,6 +104,13 @@ function removeInfoPopup() {
     toggleTable();
 }
 
+function openBlockDatePopup() {
+    const element = document.getElementById("infoPopup");
+    element.remove();
+    removediv();
+    getBlockDateList();
+}
+
 function setBlockDate(){
     var date = document.getElementById('date').value;
     var reason = document.getElementById('reason').value;

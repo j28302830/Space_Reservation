@@ -18,7 +18,7 @@ if($currentDate <= $date){
     if ($link->query($sql) === TRUE) {
         echo "<div id = 'infoPopup' class='popup'>
         <p>設定成功。</p>
-        <button  onclick='removeInfoPopup()' >確認</button> 
+        <button  onclick='openBlockDatePopup()' >確認</button> 
         </div>"; 
     }
     else{
@@ -31,13 +31,13 @@ if($currentDate <= $date){
     else{
         echo "<div id = 'infoPopup' class='popup'>
     <p>請選擇30日內的日期。</p>
-    <button  onclick='removeInfoPopup()' >確認</button>
+    <button  onclick='openBlockDatePopup()' >確認</button>
     </div>";
     }
 }else{
     echo "<div id = 'infoPopup' class='popup'>
     <p>請選擇當日或30日內的日期。</p>
-    <button  onclick='removeInfoPopup()' >確認</button>
+    <button  onclick='openBlockDatePopup()' >確認</button>
     </div>";
 }
 
