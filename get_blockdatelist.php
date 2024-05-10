@@ -27,11 +27,12 @@ $sql = "SELECT is_admin FROM users WHERE username = '$username'";
         ";
         $count=1;
         while($row = $result->fetch_assoc()) {
+            //print_r($row);
             echo "<tr>";
             echo "<td>" . $count++ . "</td>";
             echo "<td>" . $row["date"] . "</td>";
             echo "<td>" . $row["reason"] . "</td>";
-            echo "<td> <button id='cancelblockdatebid' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#confirmmodal' value ='" . $row["bid"] . "'> 開放 </button></td>";
+            echo "<td> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#confirmmodal' onclick='recordopenbid(".$row["bid"].")'> 開放 </button></td>";
             echo "</tr>";
         }
         echo "</table>";

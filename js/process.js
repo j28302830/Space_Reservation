@@ -1,3 +1,14 @@
+var bid = null;
+var rid = null;
+
+function recordopenbid(bids){
+    bid = bids;
+}
+
+function recordcancelrid(rids){
+    rid = rids;
+}
+
 function showPeriod() {
     var area = document.getElementById("area").value;
     var period = document.getElementById("period").value;
@@ -83,7 +94,6 @@ function sendReservation(area, period, num, date) {
 }
 
 function cancel_reservation() {
-    var rid = document.getElementById("cancelreservationrid").value;
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -138,7 +148,7 @@ function getBlockDateList(){
 }
 
 function cancel_blockdate() {
-    var bid = document.getElementById("cancelblockdatebid").value;
+    //alert(bid);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

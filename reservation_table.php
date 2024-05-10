@@ -30,7 +30,7 @@ function generateReservationTable($reservations)
             echo "<td>" . $reservation['日期'] . "</td>";
             echo "<td>" . $reservation['時段'] . "</td>";
             echo "<td>" . $reservation['預約日期時間'] . "</td>";
-            echo "<td> <button id='cancelreservationrid' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#confirmmodal' value ='" . $reservation['預約單編號'] . "'> 取消預約 </button></td>";
+            echo "<td> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#confirmmodal' onclick ='recordcancelrid(" . $reservation['預約單編號'] . ")'> 取消預約 </button></td>";
             echo "</tr>";
         }
         echo "</tbody>";

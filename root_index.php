@@ -117,7 +117,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn" data-bs-dismiss="modal" onclick="cancel_blockdate()">Confirm</button>
+          <button type="button" class="btn" data-bs-dismiss="modal" onclick="cancel_reservation()">Confirm</button>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
 
