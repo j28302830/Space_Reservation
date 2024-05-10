@@ -35,6 +35,7 @@ function toggleTable() {
 
 }
 
+
 function loadArea() {
     var date = document.getElementById('date').value;
     var area = document.getElementById("area").value;

@@ -6,8 +6,20 @@ require_once "./config.php";
 $area = $_GET['area'];
 $date = $_GET['date'];
 $period = $_GET['period'];
+// 获取当天日期
+$currentDate = $date;
 
-// 从数据库中获取座位信息
+// 查询数据库以检查是否有 blockdate 匹配当前日期
+$sql = "SELECT reason FROM blockdate WHERE date = '$currentDate'";
+$result = $link->query($sql);
+
+if ($result->num_rows > 0) {
+    // 输出 blockdate 的原因
+    while($row = $result->fetch_assoc()) {
+        echo "不可預約的原因是: " . $row["reason"];
+    }
+} else {
+    // 从数据库中获取座位信息
 $sql = "SELECT num, sid FROM seats WHERE location = '$area'";
 $result = $link->query($sql);
 
@@ -17,8 +29,7 @@ while ($row = $result->fetch_assoc()) {
     $seats[$row['sid']] = $row['num'];
 }
 
-// 获取当天日期
-$currentDate = $date;
+
 
 // 从预约表中获取预约信息
 $sql = "SELECT sid FROM reservation WHERE rdate = '$currentDate' AND pid = $period";
@@ -55,6 +66,9 @@ foreach ($seats as $sid => $num) {
 }
 
 echo "</table>";
+
+}
+
 
 // 关闭数据库连接
 $link->close();

@@ -13,8 +13,8 @@ $row = $result->fetch_assoc();
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
   echo "<script>" . "window.location.href='./login.php';" . "</script>";
   exit;
-}elseif($row['is_admin']){
-  echo "<script>" . "window.location.href='./root_index.php';" . "</script>";
+}elseif(!$row['is_admin']){
+  echo "<script>" . "window.location.href='./index.php';" . "</script>";
   exit;
 }
 ?>
@@ -45,7 +45,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
           <a class="nav-link" onclick="toggleTable()">查詢</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">新增預約</a>
+          <a class="nav-link" >維護</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">不開放借用日期設定</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./logout.php">登出</a>
