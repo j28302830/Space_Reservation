@@ -9,6 +9,7 @@ function generateReservationTable($reservations)
         echo "<thead>";
         echo "<tr>";
         echo "<th scope='col'>編號</th>";
+        echo "<th scope='col'>帳號</th>";
         echo "<th scope='col'>區域</th>";
         echo "<th scope='col'>座位編號</th>";
         echo "<th scope='col'>插座</th>";
@@ -22,6 +23,7 @@ function generateReservationTable($reservations)
         foreach ($reservations as $reservation) {
             echo "<tr>";
             echo "<td>" . $reservation['編號'] . "</td>";
+            echo "<td>" . $reservation['帳號'] . "</td>";
             echo "<td>" . $reservation['區域'] . "</td>";
             echo "<td>" . $reservation['座位編號'] . "</td>";
             echo "<td>" . $reservation['插座'] . "</td>";
