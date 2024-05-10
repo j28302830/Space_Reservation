@@ -76,14 +76,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
+          <h4 class="modal-title">當日預約現況</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
           <div>
-            <h3>當日預約現況</h3>
             <label for="area">選擇區域:</label>
             <select id="area">
               <option value="A">區域 A</option>

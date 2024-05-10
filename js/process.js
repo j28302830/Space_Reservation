@@ -103,3 +103,17 @@ function removeInfoPopup() {
     removediv();
     toggleTable();
 }
+
+function setBlockDate(){
+    var date = document.getElementById('date').value;
+    var reason = document.getElementById('reason').value;
+    var xmlhttp = new XMLHttpRequest();
+    removediv();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("show").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "set_blockdate.php?date=" + date + "&reason=" + reason, true);
+    xmlhttp.send();
+}
