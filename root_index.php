@@ -111,13 +111,34 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">確認是否開放預約</h4>
+          <h4 class="modal-title">確認是否取消預約</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
 
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn" data-bs-dismiss="modal" onclick="cancel_reservation()">Confirm</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="confirmopenmodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">確認是否開放預約</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal" onclick="cancel_blockdate()">Confirm</button>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
 

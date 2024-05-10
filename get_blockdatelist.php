@@ -32,7 +32,7 @@ $sql = "SELECT is_admin FROM users WHERE username = '$username'";
             echo "<td>" . $count++ . "</td>";
             echo "<td>" . $row["date"] . "</td>";
             echo "<td>" . $row["reason"] . "</td>";
-            echo "<td> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#confirmmodal' onclick='recordopenbid(".$row["bid"].")'> 開放 </button></td>";
+            echo "<td> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#confirmopenmodal' onclick='recordopenbid(".$row["bid"].")'> 開放 </button></td>";
             echo "</tr>";
         }
         echo "</table>";

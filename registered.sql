@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 10, 2024 at 04:52 PM
+-- Generation Time: May 10, 2024 at 07:18 PM
 -- Server version: 8.0.36-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.17
 
@@ -38,9 +38,8 @@ CREATE TABLE `blockdate` (
 --
 
 INSERT INTO `blockdate` (`bid`, `date`, `reason`) VALUES
-(8, '2024-05-15', ''),
-(9, '2024-05-15', ''),
-(10, '2024-05-18', '');
+(14, '2024-05-16', ''),
+(17, '2024-05-11', '');
 
 -- --------------------------------------------------------
 
@@ -86,6 +85,15 @@ CREATE TABLE `reservation` (
   `rdate` date NOT NULL,
   `rdatetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`rid`, `id`, `sid`, `pid`, `rdate`, `rdatetime`) VALUES
+(34, 10, 8, 1, '2024-05-15', '2024-05-10 17:43:24'),
+(37, 10, 10, 1, '2024-05-17', '2024-05-10 17:46:29'),
+(38, 10, 20, 1, '2024-05-18', '2024-05-10 19:15:56');
 
 -- --------------------------------------------------------
 
@@ -177,7 +185,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `reg_dat
 -- Indexes for table `blockdate`
 --
 ALTER TABLE `blockdate`
-  ADD PRIMARY KEY (`bid`);
+  ADD PRIMARY KEY (`bid`),
+  ADD UNIQUE KEY `date` (`date`);
 
 --
 -- Indexes for table `period`
@@ -214,7 +223,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blockdate`
 --
 ALTER TABLE `blockdate`
-  MODIFY `bid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `bid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `period`
@@ -226,7 +235,7 @@ ALTER TABLE `period`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `rid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `rid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `seats`

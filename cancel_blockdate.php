@@ -6,7 +6,7 @@ require_once "./config.php";
 // 接收區域和時段
 $bid = $_GET['bid'];
 $username = $_SESSION["username"];
-
+ 
 $sql = "SELECT is_admin FROM users WHERE username = '$username'";
     $result = $link->query($sql);
     $row = $result->fetch_assoc();
