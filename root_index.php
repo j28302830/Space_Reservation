@@ -45,7 +45,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
           <a class="nav-link" onclick="toggleTable()">查詢</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">維護</a>
+          <a class="nav-link" onclick="getBlockDateList()">維護</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">不開放借用日期設定</a>
@@ -98,6 +98,27 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="setBlockDate()">Confirm</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="confirmmodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">確認是否開放預約</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal" onclick="cancel_blockdate()">Confirm</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
 
       </div>

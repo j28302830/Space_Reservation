@@ -117,3 +117,30 @@ function setBlockDate(){
     xmlhttp.open("GET", "set_blockdate.php?date=" + date + "&reason=" + reason, true);
     xmlhttp.send();
 }
+
+function getBlockDateList(){
+    var xmlhttp = new XMLHttpRequest();
+    removediv();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("show").innerHTML = '<h2 class="my-4">不開放日期表單</h2>' + this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "get_blockdatelist.php", true);
+    xmlhttp.send();
+}
+
+function cancel_blockdate() {
+    var bid = document.getElementById("cancelblockdatebid").value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+        }
+    };
+    xmlhttp.open("GET", "cancel_blockdate.php?bid=" + bid, true);
+    xmlhttp.send();
+
+    removediv();
+    getBlockDateList();
+}

@@ -76,7 +76,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">當日預約現況</h4>
+          <h4 class="modal-title">新增預約</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
 
